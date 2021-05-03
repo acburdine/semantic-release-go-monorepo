@@ -1,0 +1,37 @@
+{
+  "name": "semantic-release-go-monorepo",
+  "version": "0.0.1",
+  "description": "Shared configuration for semantic-release allowing monorepo support for Go modules",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ship": "semantic-release"
+  },
+  "bin": {
+    "semantic-release-go-monorepo": "bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acburdine/semantic-release-go-monorepo.git"
+  },
+  "author": "Austin Burdine <austin@acburdine.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acburdine/semantic-release-go-monorepo/issues"
+  },
+  "homepage": "https://github.com/acburdine/semantic-release-go-monorepo#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "execa": "^5.0.0",
+    "glob": "^7.1.6",
+    "ora": "^5.4.0",
+    "semantic-release": "^17.4.2",
+    "semantic-release-plugin-decorators": "^3.0.1",
+    "stream-buffers": "^3.0.2",
+    "yargs": "^16.2.0"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}
