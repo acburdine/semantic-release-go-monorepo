@@ -36,7 +36,13 @@ async function runRelease(module, allModules = [], opts = {}, context = {}) {
   const spinner = ora(`Releasing ${module.name}`).start();
 
   try {
-    const { nextRelease } = await release(opts, context);
+    const releaseInfo = await release(opts, context);
+    if (!releaseInfo) {
+      spinner.info(`No release necessary for ${module.name}`);
+      return;
+    }
+
+    const { nextRelease } = releaseInfo;
     spinner.succeed(`Released ${module.name} v${nextRelease.version}`);
   } catch (error) {
     spinner.fail(`Failed to release ${module.name}`);
