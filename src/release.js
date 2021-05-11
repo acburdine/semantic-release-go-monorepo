@@ -19,7 +19,7 @@ async function runRelease(module, allModules = [], opts = {}, context = {}) {
   opts = {
     plugins: defaultPlugins,
     ...opts,
-    tagFormat: `${name}/v\${version}`,
+    tagFormat: name ? `${name}/v\${version}` : 'v${version}',
     extends: path.join(__dirname, './extends.js'),
     module: name,
     allModules: allModules.map(({ relativeName }) => relativeName),
