@@ -22,7 +22,7 @@ const withFilteredCommits = plugin => async (pluginConfig, context) => {
     if (!changed) return false;
 
     return changed.some(
-      (file) => file.startsWith(`${module}/`) && !(otherModuleRg && otherModuleRg.test(file))
+      (file) => (!module || file.startsWith(`${module}/`)) && !(otherModuleRg && otherModuleRg.test(file))
     );
   };
 
